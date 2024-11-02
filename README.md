@@ -45,6 +45,7 @@ Spaced has 2 command available right now. `Spaced: Toggle Hightlight` that turn 
 	"spaced.borderSize": 1, // Border size of the highlight
 	"spaced.borderColor": "#ff0000", // Border color of the highlight
 	"spaced.backgroundColor": "#ff000050", // Background color of the highlight
+	"spaced.delay": 900, // The time to wait before highlight is triggered
 }
 ~~~
 

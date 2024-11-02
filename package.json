@@ -52,6 +52,11 @@
                     "default": 1,
                     "description": "Whitespaces border size.",
                     "type": "integer"
+                },
+                "spaced.delay": {
+                    "default": 900,
+                    "description": "The time to wait before highlight is triggered.",
+                    "type": "integer"
                 }
             },
             "title": "Spaced Configuration",
@@ -109,5 +114,5 @@
         "package": "vsce package -o build",
         "publish": "vsce publish"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }

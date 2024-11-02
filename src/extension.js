@@ -5,6 +5,7 @@
 const vscode = require('vscode');
 
 let decorationType = null;
+let timeout = null;
 
 let highlight = true;
 let backgroundColor = "#ff000050";
@@ -13,6 +14,7 @@ let borderColor = "#ff0000";
 let borderSize = 1;
 let maxFileSize = 1000000;
 let maxLineCount = 10000;
+let delay = 900;
 
 // ----------------------------------------------------
 
@@ -47,6 +49,7 @@ function loadConfiguration() {
     borderSize = config.inspect('borderSize').globalValue || config.get('borderSize');
     maxFileSize = config.inspect('maxFileSize').globalValue || config.get('maxFileSize');
     maxLineCount = config.inspect('maxLineCount').globalValue || config.get('maxLineCount');
+    delay = config.inspect('delay').globalValue || config.get('delay');
 }
 
 function createDecorationType() {
@@ -74,10 +77,15 @@ function onDidChangeActiveTextEditor() {
 }
 
 function onDidChangeTextDocument(event) {
-    if (!vscode.window.activeTextEditor) return;
+    const activeTextEditor = vscode.window.activeTextEditor;
+    if (!activeTextEditor) return;
 
-    if (event.document === vscode.window.activeTextEditor.document) {
-        updateDecorations();
+    if (event.document === activeTextEditor.document) {
+        if (timeout) clearTimeout(timeout);
+
+        timeout = setTimeout(() => {
+            updateDecorations();
+        }, delay);
     }
 }
 
@@ -117,7 +125,7 @@ function updateDecorations() {
 
 function clearDecorations() {
     const activeTextEditor = vscode.window.activeTextEditor;
-    if (!activeTextEditor) return;
+    if (!activeTextEditor && !decorationType) return;
 
     activeTextEditor.setDecorations(decorationType, []);
 }

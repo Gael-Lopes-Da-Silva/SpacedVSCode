@@ -8,5 +8,8 @@
 
 ---
 
+### 0.0.2
+- Added a delay before highlight
+
 ### 0.0.1
 - Initial release
