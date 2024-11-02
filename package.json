@@ -1,0 +1,113 @@
+{
+    "activationEvents": [
+        "onDidChangeActiveTextEditor",
+        "onDidChangeTextDocument",
+        "onDidChangeConfiguration",
+        "onStartupFinished"
+    ],
+    "bugs": "https://github.com/Gael-Lopes-Da-Silva/SpacedVSCode/issues/new/choose",
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "configuration": {
+            "properties": {
+                "spaced.highlight": {
+                    "default": true,
+                    "description": "Turn on or off trailing spaces highlight.",
+                    "type": "boolean"
+                },
+                "spaced.maxFileSize": {
+                    "default": 1000000,
+                    "description": "The maximum file size to work with.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "spaced.maxLineCount": {
+                    "default": 10000,
+                    "description": "The maximum number of line to work with.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "spaced.backgroundColor": {
+                    "default": "#ff000050",
+                    "description": "Whitespaces background color.",
+                    "type": "string"
+                },
+                "spaced.borderColor": {
+                    "default": "#ff0000",
+                    "description": "Whitespaces border color.",
+                    "type": "string"
+                },
+                "spaced.borderRadius": {
+                    "default": 3,
+                    "description": "Whitespaces border radius.",
+                    "type": "integer"
+                },
+                "spaced.borderSize": {
+                    "default": 1,
+                    "description": "Whitespaces border size.",
+                    "type": "integer"
+                }
+            },
+            "title": "Spaced Configuration",
+            "type": "object"
+        },
+        "commands": [
+            {
+                "category": "Spaced",
+                "command": "spaced.toggleHighlight",
+                "title": "Toggle Hightlight"
+            },
+            {
+                "category": "Spaced",
+                "command": "spaced.removeTrailingWhitespace",
+                "title": "Remove Whitespaces"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "spaced.removeTrailingWhitespace",
+                "key": "alt+shift+t",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "description": "Highlight trailing white spaces and remove them",
+    "devDependencies": {
+        "@vscode/vsce": "^3.2.1"
+    },
+    "displayName": "Spaced",
+    "engines": {
+        "vscode": "^1.84.0"
+    },
+    "galleryBanner": {
+        "color": "#ffd900",
+        "theme": "dark"
+    },
+    "icon": "resources/logo.png",
+    "keywords": [
+        "spaces",
+        "spaced",
+        "highlight",
+        "trailing"
+    ],
+    "license": "LICENSE.md",
+    "main": "src/extension.js",
+    "markdown": "github",
+    "name": "spaced",
+    "publisher": "gael-lopes-da-silva",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Gael-Lopes-Da-Silva/SpacedVSCode"
+    },
+    "scripts": {
+        "package": "vsce package -o build",
+        "publish": "vsce publish"
+    },
+    "version": "0.0.1"
+}
