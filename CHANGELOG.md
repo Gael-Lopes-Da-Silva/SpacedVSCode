@@ -8,6 +8,10 @@
 
 ---
 
+### 0.0.3
+- Update publish config
+- Change default delay to 600 instead of 900
+
 ### 0.0.2
 - Added a delay before highlight
 

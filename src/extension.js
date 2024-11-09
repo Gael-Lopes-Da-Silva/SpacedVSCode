@@ -14,7 +14,7 @@ let borderColor = "#ff0000";
 let borderSize = 1;
 let maxFileSize = 1000000;
 let maxLineCount = 10000;
-let delay = 900;
+let delay = 600;
 
 // ----------------------------------------------------
 

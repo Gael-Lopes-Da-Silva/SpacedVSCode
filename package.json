@@ -5,34 +5,30 @@
         "onDidChangeConfiguration",
         "onStartupFinished"
     ],
+    "author": {
+        "email": "gael.lopes-da-silva@outlook.fr",
+        "name": "Gaël Lopes Da Silva",
+        "url": "https://github.com/Gael-Lopes-Da-Silva"
+    },
     "bugs": "https://github.com/Gael-Lopes-Da-Silva/SpacedVSCode/issues/new/choose",
     "categories": [
         "Other"
     ],
     "contributes": {
+        "commands": [
+            {
+                "category": "Spaced",
+                "command": "spaced.toggleHighlight",
+                "title": "Toggle Hightlight"
+            },
+            {
+                "category": "Spaced",
+                "command": "spaced.removeTrailingWhitespace",
+                "title": "Remove Whitespaces"
+            }
+        ],
         "configuration": {
             "properties": {
-                "spaced.highlight": {
-                    "default": true,
-                    "description": "Turn on or off trailing spaces highlight.",
-                    "type": "boolean"
-                },
-                "spaced.maxFileSize": {
-                    "default": 1000000,
-                    "description": "The maximum file size to work with.",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
-                "spaced.maxLineCount": {
-                    "default": 10000,
-                    "description": "The maximum number of line to work with.",
-                    "type": [
-                        "integer",
-                        "null"
-                    ]
-                },
                 "spaced.backgroundColor": {
                     "default": "#ff000050",
                     "description": "Whitespaces background color.",
@@ -54,26 +50,35 @@
                     "type": "integer"
                 },
                 "spaced.delay": {
-                    "default": 900,
+                    "default": 600,
                     "description": "The time to wait before highlight is triggered.",
                     "type": "integer"
+                },
+                "spaced.highlight": {
+                    "default": true,
+                    "description": "Turn on or off trailing spaces highlight.",
+                    "type": "boolean"
+                },
+                "spaced.maxFileSize": {
+                    "default": 1000000,
+                    "description": "The maximum file size to work with.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "spaced.maxLineCount": {
+                    "default": 10000,
+                    "description": "The maximum number of line to work with.",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 }
             },
             "title": "Spaced Configuration",
             "type": "object"
         },
-        "commands": [
-            {
-                "category": "Spaced",
-                "command": "spaced.toggleHighlight",
-                "title": "Toggle Hightlight"
-            },
-            {
-                "category": "Spaced",
-                "command": "spaced.removeTrailingWhitespace",
-                "title": "Remove Whitespaces"
-            }
-        ],
         "keybindings": [
             {
                 "command": "spaced.removeTrailingWhitespace",
@@ -114,5 +119,5 @@
         "package": "vsce package -o build",
         "publish": "vsce publish"
     },
-    "version": "0.0.2"
+    "version": "0.0.3"
 }
